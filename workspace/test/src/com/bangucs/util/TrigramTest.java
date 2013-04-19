@@ -9,44 +9,55 @@ public class TrigramTest {
 	@Test
 	public void testPurseTrigram() {
 		Trigram tri = new Trigram();
-		String a = "おまえは今まで食ったパンの枚数をおぼえているのか？";
-		String b = "お前は今までに見た映画の数を覚えているのか？";
-		System.out.println(a + "\r\n　　と　\r\n" + b + "\r\n　　は　" + tri.purseTrigram(a,b) + "　くらい似てる");
-		assertTrue(tri.purseTrigram(a,b) != 0);
+		String a = "例えば、あるメトリクスを分析することで、バグが潜みやすい箇所を絞り込んでいくことができます。";
+		String b = "例えば、あるメトリクスをよく見ることで、バグが潜みがちな場所を特定することができます。";
+		double result = tri.purseTrigram(a,b);
+		System.out.println(a + " \r\n と \r\n"+ b + "\r\n は" + result + " くらい似てるみたい。");
+		assertTrue(result != 0);
+				
+		a = "起動戦士ガンダム";
+		b = "超時空要塞マクロス";
+		result = tri.purseTrigram(a,b);
+		System.out.println(a + " \r\n と \r\n"+ b + "\r\n は" + result + " くらい似てるみたい。");
+		assertTrue(result == 0);
 		
-		a = "隣の客はよく柿食う客だ";
-		b = "おれの妹がこんなに可愛いわけがない";
-		System.out.println(a + "\r\n　　と　\r\n" + b + "\r\n　　は　" + tri.purseTrigram(a,b) + "　くらい似てる");
-		assertTrue(tri.purseTrigram(a,b) == 0);
-		
-		a = "この女子中学生はプロ詩人を目指す人が集まるサイトで評価の高い作品を選んでコピペしたものを投稿するという確信犯的な手口を使っていることが分かっています。";
-		b = "その学生は、詩人を目指している人たちが集まるホームページで、評価の高い作品を選んでコピペしたものを投稿すると言う、巧妙な手口を使ったことが分かりました。";
-		System.out.println(a + "\r\n　と　\r\n" + b + "\r\n　は　" + tri.purseTrigram(a,b) + "　くらい似てる");
-		assertTrue(tri.purseTrigram(a,b) != 0);
+		a = "離れてても　胸の奥で　友達だよ";
+		b = "離れても　胸の奥の　友達で　いさせて";
+		result = tri.purseTrigram(a,b);
+		System.out.println(a + " \r\n と \r\n"+ b + "\r\n は" + result + " くらい似てるみたい。");
+		assertTrue(result != 0);
 
-		a = "どうしても用事あるのですみませんお先に失礼します";
-		b = "どうしても用事あるのですみませんお先に失礼します";
-		System.out.println(a + "　と　" + b + "　は　" + tri.purseTrigram(a,b) + "　くらい似てる");
-		assertTrue(tri.purseTrigram(a,b) == 1);
+		a = "前回参加していない人、初めての参加者、テスト初心者の方でもわかりやすいように説明していきます。";
+		b = "前回参加していない人、初めての参加者、テスト初心者の方でもわかりやすいように説明していきます。";
+		result = tri.purseTrigram(a,b);
+		System.out.println(a + " \r\n と \r\n"+ b + "\r\n は" + result + " くらい似てるみたい。");
+		assertTrue(result ==1);
 
 		a = "";
 		b = "";
-		System.out.println(a + "　と　" + b + "　は　" + tri.purseTrigram(a,b) + "　くらい似てる");
+		assertTrue(tri.purseTrigram(a,b) ==1);
+		
+		a = "";
+		b = "";
 		assertTrue(tri.purseTrigram(a,b) ==1);
 
 		a = "a";
 		b = "aa";
-		System.out.println(a + "　と　" + b + "　は　" + tri.purseTrigram(a,b) + "　くらい似てる");
 		assertTrue(tri.purseTrigram(a,b) == 0);
 //
 //		a = "";
 //		b = "";
-//		System.out.println(a + "　と　" + b + "　は　" + tri.purseTrigram(a,b) + "　くらい似てる");
+//		System.out.println(a + "鐃緒申鐃夙￥申" + b + "鐃緒申鐃熟￥申" + tri.purseTrigram(a,b) + "鐃緒申鐃緒申鐃初い鐃緒申鐃銃わ申");
 //		assertTrue(tri.purseTrigram(a,b) != 0);
 //
 //		a = "";
 //		b = "";
-//		System.out.println(a + "　と　" + b + "　は　" + tri.purseTrigram(a,b) + "　くらい似てる");
+//		System.out.println(a + "鐃緒申鐃夙￥申" + b + "鐃緒申鐃熟￥申" + tri.purseTrigram(a,b) + "鐃緒申鐃緒申鐃初い鐃緒申鐃銃わ申");
+//		assertTrue(tri.purseTrigram(a,b) != 0);
+//
+//		a = "";
+//		b = "";
+//		System.out.println(a + "鐃緒申鐃夙￥申" + b + "鐃緒申鐃熟￥申" + tri.purseTrigram(a,b) + "鐃緒申鐃緒申鐃初い鐃緒申鐃銃わ申");
 //		assertTrue(tri.purseTrigram(a,b) != 0);
 
 		

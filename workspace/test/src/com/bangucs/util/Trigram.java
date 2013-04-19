@@ -16,6 +16,8 @@ public class Trigram {
 	 * @param a
 	 * @param b
 	 * @return difference between 2 strings
+	 *　 if a == b  => return 1
+	 *  if a <> b  => return 0　
 	 */
 	public double purseTrigram(String a, String b){
 		double difference = 0;
@@ -25,8 +27,12 @@ public class Trigram {
 		List<String> bArray = new ArrayList<String>();
 		double same = 0;   //同じののかず
 		double denom = 0;  //分母
+		//そもそも同じなら以下何もせずに1返す
+		if(a.equals(b)){
+			return 1;
+		}
 		//3文字以内ならその場で比較して返しちゃう
-		if(aLength<=3 || bLength<=3){
+		else if(aLength<=3 || bLength<=3){
 			if(a.equals(b)){
 				same = 1;
 				denom = 1;
