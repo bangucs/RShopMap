@@ -44,7 +44,6 @@ public class Trigram {
 		int aSize = aArray.size();
 		int bSize = bArray.size();
 		//compare 2 strings
-
 		if(aSize >= bSize){
 			for(int i =0;i<aSize;i++){
 				for(int j=0;j<bSize;j++){

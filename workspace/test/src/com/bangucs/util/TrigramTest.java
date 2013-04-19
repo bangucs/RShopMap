@@ -28,16 +28,16 @@ public class TrigramTest {
 		b = "どうしても用事あるのですみませんお先に失礼します";
 		System.out.println(a + "　と　" + b + "　は　" + tri.purseTrigram(a,b) + "　くらい似てる");
 		assertTrue(tri.purseTrigram(a,b) == 1);
-//
-//		a = "";
-//		b = "";
-//		System.out.println(a + "　と　" + b + "　は　" + tri.purseTrigram(a,b) + "　くらい似てる");
-//		assertTrue(tri.purseTrigram(a,b) != 0);
-//
-//		a = "";
-//		b = "";
-//		System.out.println(a + "　と　" + b + "　は　" + tri.purseTrigram(a,b) + "　くらい似てる");
-//		assertTrue(tri.purseTrigram(a,b) != 0);
+
+		a = "";
+		b = "";
+		System.out.println(a + "　と　" + b + "　は　" + tri.purseTrigram(a,b) + "　くらい似てる");
+		assertTrue(tri.purseTrigram(a,b) ==1);
+
+		a = "a";
+		b = "aa";
+		System.out.println(a + "　と　" + b + "　は　" + tri.purseTrigram(a,b) + "　くらい似てる");
+		assertTrue(tri.purseTrigram(a,b) == 0);
 //
 //		a = "";
 //		b = "";
